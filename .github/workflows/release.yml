@@ -60,6 +60,7 @@ jobs:
       - run: npm test
 
       - name: Build Windows x64 NSIS installer
+        shell: bash
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
         run: npm run build:win -- --config.extraMetadata.version="$VERSION"
