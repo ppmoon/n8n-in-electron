@@ -2,7 +2,7 @@
 
 module.exports = [
   {
-    ignores: ['node_modules/**', 'dist/**', 'out/**', '.n8n-data/**'],
+    ignores: ['node_modules/**', 'dist/**', 'out/**', '.n8n-data/**', '.cursor/**'],
   },
   {
     files: ['**/*.js'],
