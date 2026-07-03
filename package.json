@@ -10,13 +10,55 @@
     "dev": "electron .",
     "lint": "eslint .",
     "test": "node --test",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac --publish never",
+    "build:win": "electron-builder --win --publish never",
     "context7:login": "ctx7 login",
     "context7:setup": "ctx7 setup --cursor --mcp --project --yes"
+  },
+  "build": {
+    "appId": "com.n8n-in-electron.app",
+    "productName": "n8n",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules",
+        "to": "node_modules",
+        "filter": ["**/*"]
+      }
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["universal"]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "devDependencies": {
     "@upstash/context7-mcp": "^3.2.2",
     "ctx7": "^0.5.3",
     "electron": "^43.0.0",
+    "electron-builder": "^25.1.8",
     "eslint": "^10.6.0"
   },
   "dependencies": {

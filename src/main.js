@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 const config = require('./config');
+const { resolveN8nBinaryPath } = require('./n8n-binary');
 
 let n8nProcess = null;
 let mainWindow = null;
@@ -17,9 +18,12 @@ function log(...args) {
 }
 
 function resolveN8nBinary() {
-  const binName = process.platform === 'win32' ? 'n8n.cmd' : 'n8n';
-  const localBin = path.join(__dirname, '..', 'node_modules', '.bin', binName);
-  return fs.existsSync(localBin) ? localBin : binName;
+  return resolveN8nBinaryPath({
+    isPackaged: app.isPackaged,
+    devRoot: path.join(__dirname, '..'),
+    resourcesPath: process.resourcesPath,
+    platform: process.platform,
+  });
 }
 
 function startN8n(userDataDir) {
