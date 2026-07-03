@@ -19,6 +19,7 @@
   "build": {
     "appId": "com.n8n-in-electron.app",
     "productName": "n8n",
+    "npmRebuild": false,
     "directories": {
       "output": "dist"
     },
