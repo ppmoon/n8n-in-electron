@@ -1,6 +1,6 @@
 {
   "name": "n8n-in-electron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run the n8n workflow automation editor inside an Electron desktop shell.",
   "main": "src/main.js",
   "author": "",
@@ -10,9 +10,10 @@
     "dev": "electron .",
     "lint": "eslint .",
     "test": "node --test",
-    "build": "electron-builder",
-    "build:mac": "electron-builder --mac --publish never",
-    "build:win": "electron-builder --win --publish never",
+    "build": "npm run prepare:prod-deps && electron-builder",
+    "prepare:prod-deps": "node scripts/prepare-prod-node-modules.js",
+    "build:mac": "npm run prepare:prod-deps && electron-builder --mac --publish never",
+    "build:win": "npm run prepare:prod-deps && electron-builder --win --publish never",
     "context7:login": "ctx7 login",
     "context7:setup": "ctx7 setup --cursor --mcp --project --yes"
   },
@@ -29,7 +30,7 @@
     ],
     "extraResources": [
       {
-        "from": "node_modules",
+        "from": "node_modules_prod",
         "to": "node_modules",
         "filter": ["**/*"]
       }
