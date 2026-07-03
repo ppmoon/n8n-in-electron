@@ -2,6 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert');
+const path = require('path');
 
 const config = require('../src/config');
 
@@ -23,5 +24,6 @@ test('n8nChildEnv disables telemetry and sets the user folder', () => {
 });
 
 test('resolveDataDir nests n8n data under the given base', () => {
-  assert.strictEqual(config.resolveDataDir('/base'), '/base/n8n-data');
+  const base = path.join('base');
+  assert.strictEqual(config.resolveDataDir(base), path.join(base, 'n8n-data'));
 });
