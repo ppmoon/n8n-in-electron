@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "CURSOR_PLUGIN_ROOT=\".cursor\" .cursor/hooks/run-hook.cmd session-start"
+      }
+    ]
+  }
+}
