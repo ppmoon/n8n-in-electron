@@ -4,3 +4,4 @@ out/
 *.log
 .n8n-data/
 .DS_Store
+.env

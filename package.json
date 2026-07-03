@@ -9,9 +9,13 @@
     "start": "electron .",
     "dev": "electron .",
     "lint": "eslint .",
-    "test": "node --test"
+    "test": "node --test",
+    "context7:login": "ctx7 login",
+    "context7:setup": "ctx7 setup --cursor --mcp --project --yes"
   },
   "devDependencies": {
+    "@upstash/context7-mcp": "^3.2.2",
+    "ctx7": "^0.5.3",
     "electron": "^43.0.0",
     "eslint": "^10.6.0"
   },
