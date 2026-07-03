@@ -49,6 +49,27 @@ npm run lint   # ESLint (flat config in eslint.config.js)
 npm test       # Node's built-in test runner (test/*.test.js)
 ```
 
+## Releases
+
+Official macOS (Universal DMG) and Windows (x64 NSIS) installers are built
+automatically when a version tag is pushed.
+
+1. Update `version` in `package.json` (recommended).
+2. Commit and push to `main`.
+3. Create and push a tag:
+
+   ```bash
+   git tag v0.1.0
+   git push origin v0.1.0
+   ```
+
+4. GitHub Actions builds both platforms and publishes a
+   [GitHub Release](https://github.com/ppmoon/n8n-in-electron/releases)
+   with `.dmg` and `.exe` assets.
+
+Installers are unsigned. macOS users may need to right-click the app and choose
+**Open**; Windows may show a SmartScreen warning.
+
 ## Configuration
 
 The embedded n8n instance is configured in `src/config.js`. Override the host
