@@ -1,7 +1,8 @@
 {
   "mcpServers": {
     "context7": {
-      "url": "https://mcp.context7.com/mcp/oauth"
+      "command": "npx",
+      "args": ["@upstash/context7-mcp"]
     }
   }
 }
