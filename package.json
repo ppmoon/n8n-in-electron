@@ -1,0 +1,21 @@
+{
+  "name": "n8n-in-electron",
+  "version": "0.1.0",
+  "description": "Run the n8n workflow automation editor inside an Electron desktop shell.",
+  "main": "src/main.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "lint": "eslint .",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "electron": "^43.0.0",
+    "eslint": "^10.6.0"
+  },
+  "dependencies": {
+    "n8n": "^2.8.4"
+  }
+}
