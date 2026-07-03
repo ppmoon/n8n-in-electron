@@ -67,6 +67,10 @@ automatically when a version tag is pushed.
    [GitHub Release](https://github.com/ppmoon/n8n-in-electron/releases)
    with `.dmg` and `.exe` assets.
 
+Release builds bundle **production** `node_modules` only (via
+`scripts/prepare-prod-node-modules.js`), excluding dev tools such as
+`electron-builder` and ESLint from the installer.
+
 Installers are unsigned. macOS users may need to right-click the app and choose
 **Open**; Windows may show a SmartScreen warning.
 
