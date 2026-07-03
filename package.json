@@ -1,6 +1,6 @@
 {
   "name": "n8n-in-electron",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Run the n8n workflow automation editor inside an Electron desktop shell.",
   "main": "src/main.js",
   "author": "",
@@ -41,7 +41,8 @@
           "target": "dmg",
           "arch": ["universal"]
         }
-      ]
+      ],
+      "x64ArchFiles": "**/node_modules/**"
     },
     "win": {
       "target": [
